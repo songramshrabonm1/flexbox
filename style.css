@@ -1,0 +1,129 @@
+/* Font-style start*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@500&display=swap');
+/* Font-style-end */
+:root{
+    --dark-violet: #0A0C19;
+    --light-violet: #1B1938;
+    --violet: #AA5CDB;
+    --text-color: white;
+    --first-font:'Inter', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: red; */
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--dark-violet);
+}
+.card{
+    width: 70%;
+    height: 80%;
+    display: flex;
+    background-color: var(--light-violet);
+}
+.card-text{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 40px;
+}
+.card-title > p{
+    margin-top: 20px;
+    /* font-family: var(--first-font);
+    font-size: 16px;
+    font-weight: 400; */
+    font-family: var(--first-font);
+}
+.card-title > h1{
+    font-family: var(--first-font);
+}
+.card-title>h1>span{
+    color: var(--violet);
+}
+.card-title{
+    width: 100%;
+    color: var(--text-color);
+
+}
+.card-static{
+    display: flex;
+    gap: 40px;
+    color: var(--text-color);
+}
+.card-img{
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+    object-fit:cover;
+    object-position: left;
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: var(--violet);
+    opacity: 0.3;
+    position: absolute;
+    z-index: 500;
+    transition: all ease-in-out 500ms;
+}
+.card:hover .card-img> img{
+    filter: none;
+}
+.card:hover .overlay{
+    opacity: 0;
+}
+
+
+@media only screen and (max-width:1100px) {
+    .card-text{
+        width: 75%;
+        height: 100%;
+    }
+    .card-img{
+        width: 25%;
+        height: 100%;
+    }
+}
+@media only screen and (min-width:550px) and (max-width:999px){
+    .card {
+        height: 90vh;
+        flex-direction: column-reverse;
+      }
+      .card-text {
+        width: 100%;
+      }
+      .card-img {
+        width: 100%;
+      }
+}
+@media screen and (max-width:549px) {
+    .card-text {
+        height: 70%;
+        padding: 25px;
+        /* width: 100%; */
+      }
+      .card-title > h1 {
+        font-size: 1.5rem;
+      }
+    
+      .card-img {
+        height: 30%;
+        width: 100%;
+      }
+    
+}
